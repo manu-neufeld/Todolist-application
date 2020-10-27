@@ -39,8 +39,8 @@ export function Home() {
 	});
 
 	return (
-		<div>
-			<h1>Todo List</h1>
+		<div className="container">
+			<h1>To Do List</h1>
 			<form>
 				<input
 					id="name"
@@ -52,6 +52,7 @@ export function Home() {
 				/>
 			</form>
 			<ul>{myList}</ul>
+			<p>{task.length} tareas añadidas</p>
 		</div>
 	);
 }
