@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 //include images into your bundle
 import rigoImage from "../../img/rigo-baby.jpg";
@@ -8,6 +8,7 @@ export function Home() {
 	let myInput = document.querySelector("#name");
 	const [task, setTask] = useState([]);
 	const [initialValue, setInitialValue] = useState(null);
+	const [myList, setMyList] = useState(null);
 	let newTask = event => {
 		let newTask = event.target.value;
 		if (event.keyCode == 13) {
@@ -21,6 +22,21 @@ export function Home() {
 			}
 		}
 	};
+	let deleteTask = indexItem => {
+		task.splice(indexItem, 1);
+	};
+	useEffect(() => {
+		setMyList(
+			task.map((item, index) => {
+				return (
+					<li key={index}>
+						{item}
+						<button onClick={() => deleteTask(index)}>X</button>
+					</li>
+				);
+			})
+		);
+	});
 
 	return (
 		<div>
@@ -35,14 +51,7 @@ export function Home() {
 					}}
 				/>
 			</form>
-			<ul>
-				{task.map((item, index) => {
-					return <li key={index}>{item}</li>;
-					{
-						console.log(item);
-					}
-				})}
-			</ul>
+			<ul>{myList}</ul>
 		</div>
 	);
 }
