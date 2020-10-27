@@ -31,7 +31,11 @@ export function Home() {
 				return (
 					<li key={index}>
 						{item}
-						<button onClick={() => deleteTask(index)}>X</button>
+						<button
+							className="button"
+							onClick={() => deleteTask(index)}>
+							X
+						</button>
 					</li>
 				);
 			})
@@ -40,7 +44,7 @@ export function Home() {
 
 	return (
 		<div className="container">
-			<h1>To Do List</h1>
+			<h1 className="title">To Do List</h1>
 			<form>
 				<input
 					id="name"
@@ -51,8 +55,8 @@ export function Home() {
 					}}
 				/>
 			</form>
-			<ul>{myList}</ul>
-			<p>{task.length} tareas añadidas</p>
+			<ul className="list">{myList}</ul>
+			<p className="counter">{task.length} tareas añadidas</p>
 		</div>
 	);
 }

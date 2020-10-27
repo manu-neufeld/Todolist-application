@@ -9,4 +9,27 @@ background-size: 64px 128px;}
 
 .container {
     justify-content: center;
+    text-align: center;
+    border-color: black;
+    width: 300px;
+    height: 300px;
+    padding: 50px;
+    border: 1px solid red;
+   
+    
+
+}
+.title{
+    
+}
+.list{
+    list-style: none;
+    text-align: right;
+    font-family: 'Grandstander', cursive;
+}
+.counter{
+    text-align: left;   
+}
+.button{
+
 }
